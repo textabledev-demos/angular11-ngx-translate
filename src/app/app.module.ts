@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Inject, LOCALE_ID, NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import '@angular/common/locales/global/cs';
+import '@angular/common/locales/global/en';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OneComponent } from './components/one.component';
+
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,7 +27,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -31,15 +34,21 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'cs' },
+    // { provide: LOCALE_ID, useValue: 'en' },
+  ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule {
-  constructor(translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    @Inject(LOCALE_ID) private locale: string,
+  ) {
     // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('en');
+    translate.setDefaultLang(locale);
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use('en');
+    translate.use(locale);
   }
 }

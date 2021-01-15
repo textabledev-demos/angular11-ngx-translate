@@ -2,3 +2,13 @@
 
 <div [translate]="'home.description2'" [translateParams]="{value: 'world'}"></div>
 <div translate [translateParams]="{value: world}">home.description3</div>
+
+<ul>
+  <li *ngFor="let item of items" [ngPlural]="item">{{item}}
+    <ng-template ngPluralCase="=0">{{'items.=0' | translate:{count: item} }}</ng-template>
+    <ng-template ngPluralCase="=1">{{'items.=1' | translate:{count: item} }}</ng-template>
+    <ng-template ngPluralCase="few">{{'items.few' | translate:{count: item} }}</ng-template>
+    <ng-template ngPluralCase="many">{{'items.many' | translate:{count: item} }}</ng-template>
+    <ng-template ngPluralCase="other">{{'items.other' | translate:{count: item} }}</ng-template>
+  </li>
+</ul>

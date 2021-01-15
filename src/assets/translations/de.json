@@ -1,9 +1,0 @@
-{
-  "hello": "Tschüss {{value}}",
-  "home": {
-    "description": "Dies ist eine Testübersetzung",
-    "description2": "Dies ist eine Testübersetzung 2 {{value}}",
-    "description3": "Dies ist eine Testübersetzung 3 {{value}}"
-  },
-  "inner-html": "Dies ist eine <strong>Übersetzung</strong> <i>mit</i> HTML"
-}

@@ -1,0 +1,16 @@
+{
+  "hello": "Ahoj {{value}}",
+  "home": {
+    "description": "Toto je testovací překlad",
+    "description2": "Toto je testovací překlad 2 {{value}}",
+    "description3": "Toto je testovací překlad 3 {{value}}"
+  },
+  "inner-html": "Toto je <strong>překlad</strong> <i>s</i> HTML",
+  "items": {
+    "=0": "Žádná položka",
+    "=1": "Jedna položka",
+    "few": "{{count}} položky",
+    "many": "{{count}} položky",
+    "other": "{{count}} položek"
+  }
+}

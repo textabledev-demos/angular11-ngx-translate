@@ -7,6 +7,8 @@
   },
   "inner-html": "This is <strong>translation</strong> <i>with</i> HTML",
   "items": {
-
+    "=0": "No items",
+    "=1": "One item",
+    "other": "{{count}} items"
   }
 }
