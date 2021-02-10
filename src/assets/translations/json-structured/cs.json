@@ -10,7 +10,7 @@
     "=0": "Žádná položka",
     "=1": "Jedna položka",
     "few": "{{count}} položky",
-    "many": "{{count}} položky",
+    "many": "{{count}} položky (decimal)",
     "other": "{{count}} položek"
   }
 }

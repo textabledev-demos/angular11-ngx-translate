@@ -14,7 +14,8 @@ import { OneComponent } from './components/one.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, '/assets/translations/');
+  // return new TranslateHttpLoader(http, '/assets/translations/json-structured/');
+  return new TranslateHttpLoader(http, '/assets/translations/json/');
 }
 
 @NgModule({
@@ -46,7 +47,7 @@ export class AppModule {
     @Inject(LOCALE_ID) private locale: string,
   ) {
     // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang(locale);
+    translate.setDefaultLang('en');
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use(locale);

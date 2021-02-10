@@ -1,0 +1,10 @@
+{
+  "hello": "Hello {{value}}",
+  "home.description": "This is a test translation",
+  "home.description2": "This is a test translation 2 {{value}}",
+  "home.description3": "This is a test translation 3 {{value}}",
+  "inner-html": "This is <strong>translation</strong> <i>with</i> HTML",
+  "items.=0": "No items",
+  "items.=1": "One item",
+  "items.other": "{{count}} items"
+}
